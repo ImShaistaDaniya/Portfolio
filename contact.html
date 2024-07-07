@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaista Daniya</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+     
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 0; /* Ensure no extra space above the header */
+}
+
+.custom-header {
+            background-color: #000000;
+            color: #F3F4F6;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000; /* Ensure it stays above other content */
+    top: 0; 
+        }
+
+        .custom-logo-container {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            text-decoration: none;
+            color: #F3F4F6;
+        }
+        .custom-logo {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: none;
+            margin-right: 0.5rem;
+            border: 1px solid #9CA3AF;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .custom-nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        .custom-nav-item {
+            margin-right: 1.5rem;
+        }
+        .custom-nav-link {
+            text-decoration: none;
+            color: #F3F4F6;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        .custom-nav-link:hover {
+            color: #6B7280;
+        }
+        .custom-button {
+            background-color: #4B5563;
+            color: #F3F4F6;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 0.25rem;
+            margin: 0 0.5rem;
+        }
+        .custom-button:hover {
+            background-color: #111827;
+        }
+        .custom-hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .custom-hamburger div {
+            width: 100%;
+            height: 3px;
+            background-color: #F3F4F6;
+            transition: transform 0.3s ease;
+        }
+        .custom-hamburger.open div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .custom-hamburger.open div:nth-child(2) {
+            opacity: 0;
+        }
+        .custom-hamburger.open div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        .typing-animation {
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: typing 3.5s steps(30, end) infinite;
+            animation-delay: 0s;
+            font-size: 1.5rem; /* Font size for typing animation */
+            margin-left: 0rem; /* Adjust spacing between logo and text */
+        }
+        .inbx {
+    background-color: #151517; /* Adjust this color as needed */
+}
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        .custom-con {
+            background-color: #000000;
+            color: #F3F4F6;
+        }
+        @media (max-width: 1024px) {
+            .custom-nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                background-color: #000000;
+                padding: 1rem 0;
+                text-align: center;
+                z-index: 10; /* Ensure navigation is above content */
+            }
+            .custom-nav.open {
+                display: flex;
+            }
+            .custom-nav-item {
+                margin-bottom: 1rem;
+            }
+            .custom-button {
+                margin: 0.3rem 0;
+                display: block;
+                position: relative;
+                left: -7px;
+            }
+            #projects-link {
+                margin-bottom: 0.5rem;
+            }
+            .custom-hamburger {
+                display: flex;
+            }
+            .custom-con {
+                background-color: #000000;
+                color: #F3F4F6;
+            }
+            .input-container {
+                display: flex;
+                align-items: center;
+            }
+            .input-container label {
+                flex: 0 0 30%;
+                text-align: left;
+                margin-right: 0.5rem;
+            }
+            .input-container input,
+            .input-container textarea {
+                flex: 1;
+                width: auto;
+            }
+        }
+        @media (min-width: 1025px) {
+            .custom-nav-item {
+                margin-right: 1.2rem;
+            }
+            .custom-nav {
+                justify-content: flex-end;
+            }
+            .custom-nav-item:last-child {
+                margin-right: 0;
+            }
+            .custom-hamburger {
+                display: none;
+            }
+            .typing-animation-spe {
+                font-size: 1.2rem;
+                margin-left: 0; /* Reset margin for mobile view */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="custom-header">
+        <a href="./sd.png" class="custom-logo-container">
+            <div class="custom-logo">SD</div>
+            <span class="typing-animation">Shaista Daniya</span>
+        </a>
+        <nav class="custom-nav">
+            <a href="./index.html" class="custom-nav-link custom-nav-item">Home</a>
+            <a href="./about.html" class="custom-nav-link custom-nav-item">About Me</a>
+            <a href="./projects.html" id="projects-link" class="custom-nav-link custom-nav-item">Projects</a>
+            <button class="custom-button" onclick="redirectToButtonPage()">Contact</button>
+        </nav>
+        <div class="custom-hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+    <section class="text-gray-100 body-font relative custom-con">
+        <form action="https://formspree.io/f/xovaqyjl" method="POST">
+            <div class="container mx-auto">
+                <div class="flex flex-col text-center w-full mb-4">
+                    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-100">Contact</h1>
+                    <p class="lg:w-2/3 mx-auto leading-relaxed text-xl text-indigo-500">
+                        Feel free to reach out to discuss opportunities or collaborations. You can contact me
+                    </p>
+                    <div class="pt-8 w-full">
+                        <a href="https://www.linkedin.com/in/shaista-daniya-804a75219/" class="text-purple-100 bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-700 rounded text-lg">
+                            Check out my LinkedIn
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                    <div class="flex flex-wrap">
+                        <div class="p-2 w-full sm:w-1/2 input-container">
+                            <label for="name" class="leading-7 text-xl text-purple-100">Name</label>
+                            <input type="text" id="name" name="name" class="inbx bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-black focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        </div>
+                        <div class="p-2 w-full sm:w-1/2 input-container">
+                            <label for="email" class="leading-7 text-xl text-purple-100">Email</label>
+                            <input type="email" id="email" name="email" class="inbx bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-black focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        </div>
+                        <div class="p-2 w-full">
+                            <div class="relative">
+                                <label for="message" class="leading-7 text-xl text-purple-100">Message</label>
+                                <textarea id="message" name="message" class="w-full inbx  bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-black focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                            </div>
+                        </div>
+                        <div class="p-2 w-full ">
+                            <button class="flex mx-auto text-purple-100 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-500 rounded text-lg bg-indigo-800">
+                                Send
+                            </button>
+                        </div>
+                    </form>
+                        <div class="p-2 w-full pt-8 mt-2 border-t border-gray-200 text-center">
+                            <a href="mailto:shaistadaniya321@gmail.com" class="text-xl text-indigo-500">shaistadaniya321@gmail.com</a>
+                            <p class="leading-normal my-2">Hyderabad<br>Telangana, India</p>
+                            <span class="inline-flex">
+                                <a class="text-gray-500">
+                                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                        <path d="M18 2h-3a3 3 0 0 0-3 3v1"></path>
+                                        <path d="M5 16v2a3 3 0 0 0 3 3h7"></path>
+                                        <path d="M16 2v6a3 3 0 0 0 3 3h2"></path>
+                                        <path d="M1 9v2a3 3 0 0 0 3 3h7"></path>
+                                        <path d="M1 19h2a3 3 0 0 0 3-3v-6"></path>
+                                    </svg>
+                                </a>
+                                <a class="ml-2 text-gray-500">
+                                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                        <path d="M8 2L8 6"></path>
+                                        <path d="M16 2L16 6"></path>
+                                        <path d="M12 2L12 6"></path>
+                                        <path d="M4 10L20 10"></path>
+                                        <path d="M4 14L20 14"></path>
+                                        <path d="M4 18L20 18"></path>
+                                    </svg>
+                                </a>
+                                <a class="ml-2 text-gray-500">
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                        <path d="M8 2L8 6"></path>
+                                        <path d="M8 12L8 12"></path>
+                                        <path d="M8 18L8 18"></path>
+                                        <path d="M16 6L16 6"></path>
+                                        <path d="M16 12L16 12"></path>
+                                        <path d="M16 18L16 18"></path>
+                                    </svg>
+                                </a>
+                                <a class="ml-2 text-gray-500">
+                                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                                        <path stroke="none" d="M0 0h24v24H0z"></path>
+                                        <circle cx="12" cy="12" r="9"></circle>
+                                        <line x1="9" y1="12" x2="15" y2="12"></line>
+                                        <line x1="12" y1="9" x2="12" y2="15"></line>
+                                    </svg>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+        </section>
+        <script>
+             function redirectToButtonPage() {
+                window.location.href = './contact.html';
+            }
+            function toggleMenu() {
+                const nav = document.querySelector('.custom-nav');
+                const hamburger = document.querySelector('.custom-hamburger');
+                nav.classList.toggle('open');
+                hamburger.classList.toggle('open');
+            }
+        </script>
+    </body>
+    </html> 

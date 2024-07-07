@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .custom-header {
+            background-color: #000000;
+            color: #F3F4F6;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .custom-logo-container {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            text-decoration: none;
+            color: #F3F4F6;
+        }
+
+        .custom-logo {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: none;
+            margin-right: 0.5rem;
+            border: 1px solid #9CA3AF;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .custom-nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-nav-item {
+            margin-right: 1.5rem;
+        }
+
+        .custom-nav-link {
+            text-decoration: none;
+            color: #F3F4F6;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .custom-nav-link:hover {
+            color: #6B7280;
+        }
+
+        .custom-button {
+            background-color: #4B5563;
+            color: #F3F4F6;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 0.25rem;
+            margin: 0 0.5rem;
+        }
+
+        .custom-button:hover {
+            background-color: #111827;
+        }
+
+        .custom-hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .custom-hamburger div {
+            width: 100%;
+            height: 3px;
+            background-color: #F3F4F6;
+            transition: transform 0.3s ease;
+        }
+
+        .custom-hamburger.open div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .custom-hamburger.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .custom-hamburger.open div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .typing-animation {
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: typing 3.5s steps(30, end) infinite;
+            animation-delay: 0s;
+            font-size: 1.5rem; /* Font size for typing animation */
+            margin-left: 0rem; /* Adjust spacing between logo and text */
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #F3F4F6; }
+        }
+        .typing-animation {
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: typing 3.5s steps(30, end) infinite;
+            animation-delay: 0s;
+            font-size: 1.5rem; /* Font size for typing animation */
+            margin-left: 0rem; /* Adjust spacing between logo and text */
+        }
+
+        .box-container {
+            height: 285px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            opacity: 0; /* Initially hidden */
+            overflow-y: auto;
+        }
+        .pro-sec img {
+    max-width: 100%; /* Ensure image fits within its container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+        .text-gray-600.body-font {
+            margin-bottom: 0;
+        }
+
+        .flex.flex-wrap.w-full.mb-20.flex-col.items-center.text-center {
+            margin-bottom: 20px;
+        }
+
+        .project-section {
+            background-color: #000000;
+            color: #F3F4F6;
+        }
+
+        .pro-sec {
+            background-color: #1f1f1f;
+            color: #F3F4F6;
+        }
+
+        /* Animations for project boxes */
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInTop {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideInBottom {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 1s forwards;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 1s forwards;
+        }
+
+        .slide-in-top {
+            animation: slideInTop 1s forwards;
+        }
+
+        .slide-in-bottom {
+            animation: slideInBottom 1s forwards;
+        }
+        .custom-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute; /* Position absolutely for proper overlay */
+    top: 15px; /* Adjust top positioning as needed */
+    right: 15px; /* Adjust right positioning as needed */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.custom-nav {
+    display: flex;
+    align-items: center;
+    position: relative; /* Ensure relative positioning for proper stacking context */
+    z-index: 999; /* Lower z-index than hamburger menu but higher than content */
+}
+
+@media (max-width: 768px) {
+    .custom-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px; /* Adjust top positioning as needed */
+        left: 0;
+        background-color: #000000;
+        padding: 1rem 0;
+        text-align: center;
+        z-index: 998; /* Lower z-index than hamburger menu for proper overlay */
+    }
+
+    .custom-nav.open {
+        display: flex;
+    }
+
+    .custom-button {
+        /* Other styles as before */
+        position: relative;
+        left: -7px;
+        z-index: 1001; /* Ensure button is above other content */
+    }
+
+
+            .custom-button {
+                background-color: #4B5563;
+                color: #F3F4F6;
+                border: none;
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background-color 0.3s ease, color 0.3s ease;
+                border-radius: 0.25rem;
+                margin: 0.3rem 0rem 0;
+                display: block;
+                position: relative;
+                left: -7px;
+            }
+
+            #projects-link {
+                margin-bottom: 0.5rem;
+            }
+
+            .custom-hamburger {
+                display: flex;
+            }
+
+            .typing-animation-spe {
+                font-size: 1.2rem;
+                margin-left: 0;
+            }
+
+            .box-container {
+                width: 100%;
+                height: auto;
+                margin-bottom: 1rem;
+            }
+
+            .box-container .pro-sec {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin-bottom: 1rem; /* Adjusted margin */
+            }
+        
+        }
+
+    </style>
+</head>
+<body>
+    <header class="custom-header">
+        <a href="#" class="custom-logo-container">
+            <div class="custom-logo">SD</div>
+            <span class="typing-animation">Shaista Daniya</span>
+        </a>
+        <nav class="custom-nav">
+            <a href="./index.html" class="custom-nav-link custom-nav-item">Home</a>
+            <a href="./about.html" class="custom-nav-link custom-nav-item">About Me</a>
+            <a href="./projects.html" id="projects-link" class="custom-nav-link custom-nav-item">Projects</a>
+            <button class="custom-button" onclick="redirectToButtonPage()">Contact</button>
+        </nav>
+        <div class="custom-hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+    <section class="text-gray-100 body-font project-section">
+        <div class="container px-2 py-4 mx-auto project">
+            <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center pro-sec">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-100">My Projects</h1>
+                <p class="lg:w-1/2 w-full leading-relaxed text-gray-100"></p>
+            </div>
+            <div class="flex flex-wrap -m-4">
+                <div class="xl:w-1/3 md:w-1/2 p-4 h-full box-container" data-animation="slide-in-left">
+                    <div class="border border-gray-200 p-6 rounded-lg h-full pro-sec">
+                        <h2 class="text-lg text-gray-100 font-medium title-font mb-2">Pharma Bot</h2>
+                        
+                        <p class="leading-relaxed text-base">A comprehensive hardware and software project integrating a pharma bot to ensure timely medication with alarm delivery, transmit patient vitals to doctors, allow prescription management via a website, and operate via phone and sensor-based health monitoring.</p>
+                        <a href="https://drive.google.com/file/d/1NJsDQJauz42-quRogg070g2i62NoIxi4/view?usp=sharing" class="text-indigo-500 inline-flex items-center mt-4">Know More</a>
+
+                    </div>
+                </div>
+                
+                <div class="xl:w-1/3 md:w-1/2 p-4 h-full box-container" data-animation="slide-in-top">
+                    <div class="border border-gray-200 p-6 rounded-lg h-full pro-sec">
+                        <h2 class="text-lg text-gray-100 font-medium title-font mb-2">Portfolio</h2>
+                        <p class="leading-relaxed text-base">Developed using Tailwind CSS, this portfolio showcases my work and achievements in a visually appealing and responsive layout.
+                        </p>
+                        <a href="./index.html" class="text-indigo-500 inline-flex items-center mt-4">Know More</a>
+
+                    </div>
+                </div>
+                <div class="xl:w-1/3 md:w-1/2 p-4 h-full box-container" data-animation="slide-in-right">
+                    <div class="border border-gray-200 p-6 rounded-lg h-full pro-sec">
+                        <h2 class="text-lg text-gray-100 font-medium title-font mb-2">Adventure Game</h2>
+                        <p class="leading-relaxed text-base">A Java-based text adventure game that uses data structures to create an interactive fiction web app where players follow commands to explore the story.
+                        </p>
+                        <a href="https://www.linkedin.com/in/shaista-daniya-804a75219/" class="text-indigo-500 inline-flex items-center mt-4">Know More</a>
+
+                    </div>
+                </div>
+                <div class="xl:w-1/3 md:w-1/2 p-4 h-full box-container" data-animation="slide-in-bottom">
+                    <div class="border border-gray-200 p-6 rounded-lg h-full pro-sec">
+                        <h2 class="text-lg text-gray-100 font-medium title-font mb-2">Marketing Website</h2>
+                        <p class="leading-relaxed text-base">A responsive marketing website developed using React.js, showcasing modern web design techniques and interactivity.
+                        </p>
+                        <a href="https://zoopedigi.netlify.app/" class="text-indigo-500 inline-flex items-center mt-4">Know More</a>
+
+                    </div>
+                </div>
+                <div class="xl:w-1/3 md:w-1/2 p-4 h-full box-container" data-animation="slide-in-left">
+                    <div class="border border-gray-200 p-6 rounded-lg h-full pro-sec">
+                        <h2 class="text-lg text-gray-100 font-medium title-font mb-2">Biped Bot</h2>
+                        <p class="leading-relaxed text-base">A project involving the creation of a functional biped bot using 3D printed parts, Arduino, servo motors, and custom-designed circuits.
+                        </p>
+                        <a href="https://drive.google.com/file/d/1W8z2Q4QH0wLm9FuQxXzdH-ZyNUEPW3EV/view?usp=sharing" class="text-indigo-500 inline-flex items-center mt-4">Know More</a>
+
+                    </div>
+                </div>
+                <div class="xl:w-1/3 md:w-1/2 p-4 h-full box-container" data-animation="slide-in-top">
+                    <div class="border border-gray-200 p-6 rounded-lg h-full pro-sec">
+                        <h2 class="text-lg text-gray-100 font-medium title-font mb-2">Space Invader Game</h2>
+                        <p class="leading-relaxed text-base">A classic space invader game built using Python libraries, providing a nostalgic and engaging gameplay experience.
+                        </p>
+                        <a href="https://www.linkedin.com/posts/shaista-daniya-804a75219_below-is-an-example-of-a-game-i-created-using-activity-7010273063455911936-nE7N?utm_source=share&utm_medium=member_desktop" class="text-indigo-500 inline-flex items-center mt-4">Know More</a>
+
+                    </div>
+                </div>
+                <div class="xl:w-1/3 md:w-1/2 p-4 h-full box-container" data-animation="slide-in-right">
+                    <div class="border border-gray-200 p-6 rounded-lg h-full pro-sec">
+                        <h2 class="text-lg text-gray-100 font-medium title-font mb-2">Database</h2>
+                        <p class="leading-relaxed text-base">Developed a team database using MySQL, ensuring efficient data management and retrieval.
+                        </p>
+                        <a href="https://www.linkedin.com/in/shaista-daniya-804a75219/" class="text-indigo-500 inline-flex items-center mt-4">Know More</a>
+
+                    </div>
+                </div>
+                <div class="xl:w-1/3 md:w-1/2 p-4 h-full box-container" data-animation="slide-in-bottom">
+                    <div class="border border-gray-200 p-6 rounded-lg h-full pro-sec">
+                        <h2 class="text-lg text-gray-100 font-medium title-font mb-2">PowerBi</h2>
+                        <p class="leading-relaxed text-base">Built a dashboard and report for the 2022 placement dataset using Microsoft PowerBi, providing insightful data visualizations.
+                        </p>
+                        <a href="https://www.linkedin.com/posts/shaista-daniya-804a75219_powerbi-project-activity-7049535841022476289-LFgk?utm_source=share&utm_medium=member_desktop" class="text-indigo-500 inline-flex items-center mt-4">Know More</a>
+
+                    </div>
+                </div>
+                <div class="xl:w-1/3 md:w-1/2 p-4 h-full box-container" data-animation="slide-in-left">
+                    <div class="border border-gray-200 p-6 rounded-lg h-full pro-sec">
+                        <h2 class="text-lg text-gray-100 font-medium title-font mb-2">Photography Site</h2>
+                        <p class="leading-relaxed text-base">Created a responsive photography website using HTML, CSS, and JavaScript, designed to showcase photography work in an elegant and user-friendly manner.
+                        </p>
+                        <a href="https://www.linkedin.com/in/shaista-daniya-804a75219/" class="text-indigo-500 inline-flex items-center mt-4">Know More</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function redirectToButtonPage() {
+            window.location.href = './contact.html';
+        }
+        function toggleMenu() {
+            const nav = document.querySelector('.custom-nav');
+            const hamburger = document.querySelector('.custom-hamburger');
+            nav.classList.toggle('open');
+            hamburger.classList.toggle('open');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const boxes = document.querySelectorAll('.box-container');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(entry.target.getAttribute('data-animation'));
+                        entry.target.style.opacity = 1; // Make visible when in viewport
+                    }
+                });
+            });
+
+            boxes.forEach(box => {
+                observer.observe(box);
+            });
+        });
+    </script>
+</body>
+</html>

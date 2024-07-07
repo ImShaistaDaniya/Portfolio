@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaista Daniya</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<style>
+  .custom-header {
+      background-color: #000000;
+      color: #F3F4F6;
+  }
+
+  .custom-logo-container {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      color: #F3F4F6;
+  }
+
+  .custom-logo {
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 0.25rem;
+      background-color: #9CA3AF;
+  }
+
+  .custom-nav-link {
+      margin-right: 1.25rem;
+      font-size: 1.25rem;
+      color: #F3F4F6;
+      transition: color 0.3s ease;
+  }
+
+  .custom-nav-link:hover {
+      color: #6B7280;
+  }
+
+  .custom-button {
+      display: inline-flex;
+      align-items: center;
+      background-color: #4B5563;
+      border: none;
+      padding: 0.25rem 0.75rem;
+      outline: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      color: #F3F4F6;
+  }
+
+  .custom-button:hover {
+      background-color: #111827;
+      color: #F3F4F6;
+  }
+
+  .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+  }
+
+  .typing-animation {
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation: typing 3.5s steps(30, end) infinite;
+      animation-delay: 0s;
+      font-size: 1.5rem;
+  }
+
+  .custom-intro {
+      background-color: #232424;
+      color: #f7f7f7;
+  }
+
+  .custom-exp {
+      background-color: #282929;
+      color: #f7f7f7;
+      text-align: center;
+  }
+
+  .custom-exp1 {
+      background-color: #2d2e2e;
+      color: #f7f7f7;
+  }
+
+  .custom-exp2 {
+      background-color: #343636;
+      color: #f7f7f7;
+  }
+
+  .custom-exp3 {
+      background-color: #3b3c3c;
+      color: #f7f7f7;
+  }
+
+  .custom-ed {
+      background-color: #444646;
+      color: #f7f7f7;
+      text-align: center;
+  }
+
+  .custom-ed1 {
+      background-color: #1f1f1f;
+      color: #f7f7f7;
+  }
+
+  .custom-ed2 {
+      background-color: #1f1f1f;
+      color: #f7f7f7;
+  }
+
+  .custom-ed3 {
+      background-color: #1f1f1f;
+      color: #f7f7f7;
+  }
+
+  .custom-spe {
+      background-color: #1f1f1f;
+      color: #f7f7f7;
+      text-align: center;
+  }
+
+  .custom-con {
+      background-color: #000000;
+      color: #F3F4F6;
+  }
+
+  @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+  }
+
+  @media (max-width: 768px) {
+            #hamburger-button {
+                display: inline-flex;
+            }
+
+            nav {
+                display: none;
+            }
+
+            #mobile-menu {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                background-color: #000000;
+                color: #F3F4F6;
+                padding: 1rem 0;
+            }
+
+            #mobile-menu a {
+                margin-bottom: 1rem;
+            }
+        }
+</style>
+</head>
+<body>
+  <header class="custom-header">
+    <div class="container mx-auto p-4">
+        <a class="custom-logo-container">
+            <img src="./sd.png" alt="Logo" class="custom-logo">
+            <span class="ml-3 typing-animation">Shaista Daniya</span>
+        </a>
+        <nav class="hidden md:flex">
+            <a href="./" class="custom-nav-link">Home</a>
+            <a href="./about.html" class="custom-nav-link">About Me</a>
+            <a href="projects.html" class="custom-nav-link">Projects</a>
+            <a href="./contact.html">
+                <button class="custom-button">Contact
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </a>
+        </nav>
+        <div class="md:hidden">
+            <button id="hamburger-button" class="custom-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden flex-col items-center md:hidden">
+        <a href="./" class="custom-nav-link">Home</a>
+        <a href="./about.html" class="custom-nav-link">About Me</a>
+        <a href="projects.html" class="custom-nav-link">Projects</a>
+        <a href="./contact.html">
+            <button class="custom-button">Contact
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </a>
+    </div>
+</header>
+
+
+
+<section class="text-gray-200 body-font custom-intro">
+  <div class="container mx-auto flex flex-col px-0 pt-0 justify-center items-center">
+      <img class="mb-0 p-7 object-cover object-center rounded" alt="hero" style="height: 400px; width: 400px;" src="./Profile.jpeg">
+    
+      <div class="w-full md:w-2/3 flex flex-col mb-5 items-center text-center"> <!-- Adjusted margin from mb-16 to mb-8 -->
+          <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">Hi I'm Shaista Daniya</h1>
+          <p class="mb-1 leading-relaxed">Passionate Developer dedicated to advancing technology through innovative app development and teamwork. Skilled in UI/UX, dynamic animations, and backend integration, always striving for personal and collective growth.</p> 
+      </div>   
+  </div>
+</section>
+
+    
+    <section class=" px-4 py-6 overflow-hidden custom-exp">
+      <div class="container mx-auto">
+        <div class="flex flex-col text-center w-full mb-4">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-100">Experience</h1>
+       
+    
+        <div class="flex flex-wrap justify-center">
+          <div class="w-full md:w-1/3 px-4 py-6 md:mx-2 mb-4 custom-exp1">
+            <!-- Experience 1 -->
+            <div class="h-full">
+              <div class="md:flex md:flex-nowrap">
+                <div class="md:w-32 flex-shrink-0 flex flex-col">
+                  <span class="font-semibold text-gray-300">Software Developer</span>
+                  <span class="mt-1 text-gray-200 text-sm">03/2024 - 05/2024</span>
+                  <span class="text-sm text-gray-200">Pune, Maharashtra (Remote)</span>
+                </div>
+                <div class="md:flex-grow">
+                  <h2 class="text-2xl font-medium text-gray-100 mb-2">Swriel</h2>
+                  <p class="leading-relaxed">Product & Services company helping to boost revenue for local Service supplies & Services. During my tenure at a prestigious multi-pro company, I served as a dedicated React Native application developer, specializing in crafting real-time applications. My responsibilities included designing screens and ensuring seamless functionality integrated with backend APIs. One of the most enriching aspects of my journey was delving into the world of dynamic animations, where I not only refined my skills but also deepened my insights in the intricate art of app development.</p>
+                  <a href="https://www.linkedin.com/in/shaista-daniya-804a75219/" class="text-indigo-500 inline-flex items-center mt-4">Know More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="w-full md:w-1/3 px-4 py-6 md:mx-2 mb-4 custom-exp2">
+            <!-- Experience 2 -->
+            <div class="h-full">
+              <div class="md:flex md:flex-nowrap">
+                <div class="md:w-32 flex-shrink-0 flex flex-col">
+                  <span class="font-semibold text-gray-100">Software Developer</span>
+                  <span class="mt-1 text-gray-300 text-sm">05/2023 - 08/2023</span>
+                  <span class="text-sm text-gray-300">Mechanicsburg, US (Remote)</span>
+                </div>
+                <div class="md:flex-grow">
+                  <h2 class="text-2xl font-medium text-gray-100 mb-2">Gig and Take</h2>
+                  <p class="leading-relaxed">Application which makes the leap to a truly flexible workforce. Through my internship, I developed a robust skill set in React Native, gaining proficiency in UI components, navigation, and state management (particularly Redux), as well as API integration and testing using JEST. With these acquired skills, I am well-equipped to contribute to the successful development of functional and efficient applications. I gained valuable teamwork experience, gaining insights into the collaborative work environment, which proved to be an enriching and beneficial experience.</p>
+                  <a href="https://www.linkedin.com/in/shaista-daniya-804a75219/" class="text-indigo-500 inline-flex items-center mt-4">Know More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="w-full md:w-1/3 px-4 py-6  md:mx-2 mb-4 custom-exp3">
+            <!-- Experience 3 -->
+            <div class="h-full">
+              <div class="md:flex md:flex-nowrap">
+                <div class="md:w-32 flex-shrink-0 flex flex-col">
+                  <span class="font-semibold text-gray-100">Software Developer</span>
+                  <span class="mt-1 text-gray-300 text-sm">01/2023 - 02/2023</span>
+                  <span class="text-sm text-gray-300">Hyderabad (Remote)</span>
+                </div>
+                <div class="md:flex-grow">
+                  <h2 class="text-2xl font-medium text-gray-100 mb-2">Hexart.In</h2>
+                  <p class="leading-relaxed">AIML projects: <br> Classification of Neural Networks using python, <br>Stress level Detection using Python, <br> Flipkart reviews Sentimental Analysis.</p>
+                  <a href="https://www.linkedin.com/in/shaista-daniya-804a75219/" class="text-indigo-500 inline-flex items-center mt-4">Know More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="text-gray-600 body-font custom-ed">
+      <div class="container px-4 md:px-2 py-4 mx-auto text-center">
+        <div class="flex flex-col text-center w-full mb-4">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-100">Education</h1>
+          <div class="flex flex-wrap justify-center -mx-4">
+              <div class="py-6 px-4 w-full md:w-1/2 lg:w-1/3">
+                  <div class="h-full flex flex-col custom-ed1 p-6 rounded-lg bg-purple-100">
+                      <h2 class="tracking-widest text-xs title-font font-medium text-indigo-500 mb-2">Bachelor of Engineering (ECE)</h2>
+                      <h1 class="title-font text-xl font-medium text-gray-100 mb-4">Muffakham Jah College of Engineering and Technology</h1>
+                      <p class="leading-relaxed mb-3">Osmania University - 8.01 CGPA<br>10/2020 - Present, Hyderabad, Telangana<br>PURSUING</p>
+                  </div>
+              </div>
+  
+              <div class="py-6 px-4 w-full md:w-1/2 lg:w-1/3">
+                  <div class="h-full flex flex-col custom-ed2 p-6 rounded-lg bg-purple-200 mt-4 md:mt-0">
+                      <h2 class="tracking-widest text-xs title-font font-medium text-indigo-500 mb-2">Intermediate</h2>
+                      <h1 class="title-font text-xl font-medium text-gray-100 mb-4">Sri Chaitanya Junior College</h1>
+                      <p class="leading-relaxed mb-3">Board of Intermediate Education (T.S) - 84.8%<br>06/2018 - 04/2020, Hyderabad, Telangana</p>
+                  </div>
+              </div>
+  
+              <div class="py-6 px-4 w-full md:w-1/2 lg:w-1/3">
+                  <div class="h-full flex flex-col custom-ed3 p-6 rounded-lg bg-purple-300 mt-4 md:mt-0">
+                      <h2 class="tracking-widest text-xs title-font font-medium text-indigo-500 mb-2">High School</h2>
+                      <h1 class="title-font text-xl font-medium text-gray-100 mb-4">Little Flower High School</h1>
+                      <p class="leading-relaxed mb-3">Board of Secondary Education (SSC) - 9.3 CGPA<br>04/2018, Hyderabad, Telangana</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+    
+  <section class="text-gray-100 body-font overflow-hidden custom-spe">
+    <div class="container px-2 py-4 mx-auto text-center">
+    <div class="flex flex-col text-center w-full mb-4">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-100">My specialty</h1>
+    <div class="lg:w-4/5 mx-auto flex flex-wrap justify-center">
+      <img class="lg:w-1/4 md:w-1/2 w-1/2 mb-0 p-7 object-cover object-center rounded" alt="hero" src="./Uni.jpg">
+      <div class="lg:w-1/2 w-full lg:pl-8 lg:py-4 mt-8 lg:mt-0 text-center">
+        <h3 class="text-purple-50 text-xl title-font font-medium mb-1 mt-8">
+          I adeptly juggle multiple tasks by efficiently managing my time and priorities. Whether I'm traveling, painting, studying visual capture, or working on software and hardware projects, I leverage my organizational skills and passion for learning to maintain productivity in each pursuit.
+        </h3>
+        <div class="flex mb-2 justify-center">
+          <!-- Content inside the flex div can go here -->
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  
+    <section class="text-gray-100 body-font relative custom-con">
+      <div class="container px-2 py-4 mx-auto">
+        <div class="flex flex-col text-center w-full mb-4">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-100">Contact</h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-xl text-indigo-500">
+            Feel free to reach out to discuss opportunities or collaborations. You can contact me
+          </p>
+          <div class="pt-8 w-full">
+            <a href="https://www.linkedin.com/in/shaista-daniya-804a75219/" class="text-purple-100 bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-700 rounded text-lg">
+              Check out my LinkedIn
+            </a>
+          </div>
+        </div>
+    
+        <div class="lg:w-1/2 md:w-2/3 mx-auto">
+          <div class="flex flex-wrap">
+            <div class="p-2 w-full sm:w-1/2">
+              <div class="relative">
+                <label for="name" class="leading-7 text-xl text-purple-100">Name</label>
+                <input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-full sm:w-1/2">
+              <div class="relative">
+                <label for="email" class="leading-7 text-xl text-purple-100">Email</label>
+                <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-full">
+              <div class="relative">
+                <label for="message" class="leading-7 text-xl text-purple-100">Message</label>
+                <textarea id="message" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+              </div>
+            </div>
+            <div class="p-2 w-full ">
+              <button class="flex mx-auto text-purple-100 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-800 rounded text-lg">
+                Send
+              </button>
+            </div>
+            <div class="p-2 w-full pt-8 mt-2 border-t border-gray-200 text-center">
+              <a class="text-xl text-indigo-500">shaistadaniya321@gmail.com</a>
+              <p class="leading-normal my-2">Hyderabad<br>Telangana, India</p>
+              <span class="inline-flex">
+                <a class="text-gray-500">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-4 text-gray-100">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-4 text-gray-100">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                  </svg>
+                </a>
+                <a class="ml-4 text-gray-100">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+    <script>
+      document.getElementById('hamburger-button').addEventListener('click', function() {
+          var menu = document.getElementById('mobile-menu');
+          if (menu.classList.contains('hidden')) {
+              menu.classList.remove('hidden');
+          } else {
+              menu.classList.add('hidden');
+          }
+      });
+  </script>
+    
+    
+          
+   
+</body>
+</html>

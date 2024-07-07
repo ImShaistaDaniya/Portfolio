@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaista Daniya</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .custom-header {
+            background-color: #000000;
+            color: #F3F4F6;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .custom-logo-container {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            text-decoration: none;
+            color: #F3F4F6;
+        }
+
+        .custom-logo {
+            width: 2.5rem;
+            height: 2.5rem;
+            /* Remove background color */
+            background: none;
+            /* Ensure no extra margin */
+            margin-right: 0.5rem; /* Adjust space between logo and text */
+            /* Use a border or other style if needed */
+            border: 1px solid #9CA3AF;
+            border-radius: 50%; /* Optional: Makes it round */
+            /* Keep the text vertically centered with logo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .custom-nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center; /* Center items vertically */
+        }
+
+        .custom-nav-item {
+            margin-right: 1.5rem; /* Default margin for all items */
+        }
+
+        .custom-nav-link {
+            text-decoration: none;
+            color: #F3F4F6;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .custom-nav-link:hover {
+            color: #6B7280;
+        }
+
+        .custom-button {
+            background-color: #4B5563;
+            color: #F3F4F6;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 0.25rem;
+            margin: 0 0.5rem; /* Adjusted margin for both mobile and laptop */
+        }
+
+        .custom-button:hover {
+            background-color: #111827;
+        }
+
+        /* Hamburger menu styles */
+        .custom-hamburger {
+            display: none; /* Hide hamburger menu by default */
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .custom-hamburger div {
+            width: 100%;
+            height: 3px;
+            background-color: #F3F4F6;
+            transition: transform 0.3s ease;
+        }
+
+        .custom-hamburger.open div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .custom-hamburger.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .custom-hamburger.open div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Typing Animation */
+        .typing-animation {
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: typing 3.5s steps(30, end) infinite;
+            animation-delay: 0s;
+            font-size: 1.5rem; /* Font size for typing animation */
+            margin-left: 0rem; /* Adjust spacing between logo and text */
+        }
+        .custom-intro {
+      background-color: #232424;
+      color: #f7f7f7;
+      }
+      .hidden {
+      opacity: 0;
+    }
+    .animate-image {
+      animation: slideInLeft 1s forwards;
+    }
+    .animate-text {
+      animation: slideInTop 1s forwards;
+    }
+      @keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+  .custom-exp {
+      background-color: #282929;
+      color: #f7f7f7;
+      text-align: center;
+  }
+
+  .custom-exp1 {
+      background-color: #3e3f3f;
+      color: #f7f7f7;
+      opacity: 0;
+  }
+  .logohw{
+    height: 80px; 
+    width: 80px;
+  }
+  .custom-exp2 {
+      background-color: #5e5e5e;
+      color: #f7f7f7;
+      opacity: 0;
+  }
+
+  .custom-exp3 {
+      background-color: #484949;
+      color: #f7f7f7;
+      opacity: 0;
+  }
+  .custom-exp1.animate {
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.custom-exp2.animate {
+  animation: slideInFromRight 1s ease-out forwards;
+}
+
+.custom-exp3.animate {
+  animation: slideInFromBottom 1s ease-out forwards;
+}
+  .custom-ed {
+      background-color: #444646;
+      color: #f7f7f7;
+      text-align: center;
+  }
+
+  .custom-ed1 {
+      background-color: #1f1f1f;
+      color: #f7f7f7;
+  }
+
+  .custom-ed2 {
+      background-color: #1f1f1f;
+      color: #f7f7f7;
+  }
+
+  .custom-ed3 {
+      background-color: #1f1f1f;
+      color: #f7f7f7;
+  }
+  @keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.custom-ed1, .custom-ed2, .custom-ed3, .custom-exp1, .custom-exp2, .custom-exp3   {
+  opacity: 1;
+}
+
+.custom-ed1.animate, .custom-ed2.animate, .custom-ed3.animate {
+  animation: slideInFromLeft 1.5s ease-out forwards;
+}
+
+.custom-exp1.animate {
+  animation: slideInFromLeft 1.5s ease-out forwards;
+}
+
+.custom-exp2.animate {
+  animation: slideInFromRight 1.5s ease-out forwards;
+}
+
+.custom-exp3.animate {
+  animation: slideInFromBottom 1.5s ease-out forwards;
+}
+
+
+  .custom-spe {
+      background-color: #1f1f1f;
+      color: #f7f7f7;
+      text-align: center;
+  }
+  .hidden {
+      opacity: 0;
+    }
+    .animate-image {
+      animation: slideInLeft 1s forwards;
+    }
+    .animate-text {
+      animation: slideInTop 1s forwards;
+    }
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes slideInTop {
+      from {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  .custom-con {
+      background-color: #000000;
+      color: #F3F4F6;
+  }
+
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @media (max-width: 768px) {
+            .custom-nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                background-color: #000000;
+                padding: 1rem 0;
+                text-align: center;
+            }
+
+            .custom-nav.open {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .custom-nav-item {
+                margin-bottom: 1rem;
+            }
+
+            .custom-button {
+                background-color: #4B5563;
+                color: #F3F4F6;
+                border: none;
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background-color 0.3s ease, color 0.3s ease;
+                border-radius: 0.25rem;
+                margin: 0.3rem 0rem 0; /* Adjusted margin for top, right, and bottom */
+                display: block; /* Ensure it's a block element to center */
+                position: relative; /* Position relative for left adjustment */
+                left: -7px; /* Adjust left position as needed */
+            }
+
+            #projects-link {
+                margin-bottom: 0.5rem; /* Ensure space between Projects and Contact */
+            }
+
+            .custom-hamburger {
+                display: flex; /* Show hamburger menu only in mobile view */
+            }
+
+            /* Font size for mobile view */
+            .typing-animation-spe {
+                font-size: 1.2rem;
+                margin-left: 0; /* Reset margin for mobile view */
+            }
+            #specialtyImage {
+    padding: 0.5rem 0;
+  }
+  
+  #specialtyText {
+    margin-top: 0.5rem;
+  }
+        }
+        .inbx {
+                        background-color: #151517; /* Adjust this color as needed */
+                    }
+                    @media (max-width: 1024px) {
+                    .input-container {
+                      display: flex;
+                      align-items: center;
+                  }
+                  .input-container label {
+                      flex: 0 0 30%;
+                      text-align: left;
+                      margin-right: 0.5rem;
+                  }
+                  .input-container input,
+                  .input-container textarea {
+                      flex: 1;
+                      width: auto;
+                  }
+                }
+        @media (min-width: 769px) {
+            .custom-nav-item {
+                margin-right: 1.2rem; /* Adjusted margin for desktop/laptop view */
+            }
+
+            .custom-nav {
+                justify-content: flex-end; /* Align items to the right in desktop view */
+            }
+
+            .custom-nav-item:last-child {
+                margin-right: 0; /* Remove margin from last item */
+            }
+
+            .custom-hamburger {
+                display: none; /* Hide hamburger menu in desktop/laptop view */
+            }
+            #specialtyImage {
+    padding: 0.5rem 0;
+  }
+  
+  #specialtyText {
+    margin-top: 0.5rem;
+  }
+     
+        }
+    </style>
+</head>
+<body>
+    <header class="custom-header">
+        <a href="./sd.png" class="custom-logo-container">
+            <div class="custom-logo">SD</div>
+            <span class="typing-animation">Shaista Daniya</span>
+        </a>
+        <nav class="custom-nav">
+            <a href="./index.html" class="custom-nav-link custom-nav-item">Home</a>
+            <a href="./about.html" class="custom-nav-link custom-nav-item">About Me</a>
+            <a href="./projects.html" id="projects-link" class="custom-nav-link custom-nav-item">Projects</a>
+            <button class="custom-button" onclick="redirectToButtonPage()">Contact</button>
+        </nav>
+        <div class="custom-hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+    <section class="text-gray-200 body-font custom-intro">
+      <div class="container mx-auto flex flex-col px-0 pt-0 justify-center items-center">
+          <img class="mb-0 p-7 object-cover object-center rounded" alt="hero" style="height: 250px; width: 250px;" src="./profile.png">
+        
+          <div class="w-full md:w-2/3 flex flex-col mb-5 items-center text-center"> <!-- Adjusted margin from mb-16 to mb-8 -->
+              <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">Hi I'm Shaista Daniya</h1>
+              <p class="mb-1 leading-relaxed">Passionate Developer dedicated to advancing technology through innovative app development and teamwork. Skilled in UI/UX, dynamic animations, and backend integration, always striving for personal and collective growth.</p> 
+          </div>   
+      </div>
+    </section>
+    
+    <section class="px-4 py-6 overflow-hidden custom-exp">
+      <div class="container mx-auto">
+        <div class="flex flex-col text-center w-full mb-4">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-100">Experience</h1>
+        </div>
+    
+        <div class="flex flex-wrap justify-center">
+          <div class="w-full md:w-1/3 px-4 py-6 md:mx-2 mb-4 custom-exp1">
+            <!-- Experience 1 -->
+            <div class="h-full">
+              <div class="md:flex md:flex-nowrap">
+                <div class="md:w-32 flex-shrink-0 flex flex-col items-center">
+                  <span class="font-semibold text-gray-300">Software Developer</span>
+                  <img src="./swriel_logo.png" alt="Swriel Logo" class="mt-2 logohw">
+                  <span class="mt-1 text-gray-200 text-sm">03/2024 - 05/2024</span>
+                  <span class="text-sm text-gray-200">Pune, Maharashtra (Remote)</span>
+                </div>
+                <div class="md:flex-grow">
+                  <h2 class="text-2xl font-medium text-gray-100 mb-2">Swriel</h2>
+                  <p class="leading-relaxed">Product & Services company helping to boost revenue for local Service supplies & Services. During my tenure at a prestigious multi-pro company, I served as a dedicated React Native application developer, specializing in crafting real-time applications. My responsibilities included designing screens and ensuring seamless functionality integrated with backend APIs. One of the most enriching aspects of my journey was delving into the world of dynamic animations, where I not only refined my skills but also deepened my insights in the intricate art of app development.</p>
+                  <a href="https://www.linkedin.com/posts/shaista-daniya-804a75219_internship-reactnative-tech-activity-7210631096483336192-uGJN?utm_source=share&utm_medium=member_desktop" class="text-indigo-500 inline-flex items-center mt-4">Know More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="w-full md:w-1/3 px-4 py-6 md:mx-2 mb-4 custom-exp2">
+            <!-- Experience 2 -->
+            <div class="h-full">
+              <div class="md:flex md:flex-nowrap">
+                <div class="md:w-32 flex-shrink-0 flex flex-col items-center">
+                  <span class="font-semibold text-gray-100">Software Developer</span>
+                  <img src="./GAT_logo.png" alt="GAT Logo" class="mt-2 logohw">
+                  <span class="mt-1 text-gray-300 text-sm">05/2023 - 08/2023</span>
+                  <span class="text-sm text-gray-300">Mechanicsburg, US (Remote)</span>
+                </div>
+                <div class="md:flex-grow">
+                  <h2 class="text-2xl font-medium text-gray-100 mb-2">Gig and Take</h2>
+                  <p class="leading-relaxed">Application which makes the leap to a truly flexible workforce. Through my internship, I developed a robust skill set in React Native, gaining proficiency in UI components, navigation, and state management (particularly Redux), as well as API integration and testing using JEST. With these acquired skills, I am well-equipped to contribute to the successful development of functional and efficient applications. I gained valuable teamwork experience, gaining insights into the collaborative work environment, which proved to be an enriching and beneficial experience.</p>
+                  <a href="https://www.linkedin.com/posts/shaista-daniya-804a75219_i-am-delighted-to-share-my-internship-certificate-activity-7092154202172375041-f5yL?utm_source=share&utm_medium=member_desktop" class="text-indigo-500 inline-flex items-center mt-4">Know More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="w-full md:w-1/3 px-4 py-6 md:mx-2 mb-4 custom-exp3">
+            <!-- Experience 3 -->
+            <div class="h-full">
+              <div class="md:flex md:flex-nowrap">
+                <div class="md:w-32 flex-shrink-0 flex flex-col items-center">
+                  <span class="font-semibold text-gray-100">Software Developer</span>
+                  <img src="./Hexart_logo.png" alt="Hexart Logo" class="mt-2 logohw">
+                  <span class="mt-1 text-gray-300 text-sm">01/2023 - 02/2023</span>
+                  <span class="text-sm text-gray-300">Hyderabad (Remote)</span>
+                </div>
+                <div class="md:flex-grow">
+                  <h2 class="text-2xl font-medium text-gray-100 mb-2">Hexart.In</h2>
+                  <p class="leading-relaxed">
+                    AIML Projects: <br>
+                    - Developed a classification model for neural networks using Python.<br>
+                    - Created a stress level detection system utilizing Python.<br>
+                    - Conducted a sentiment analysis of Flipkart reviews.
+                  </p>
+                  <a href="https://www.linkedin.com/posts/shaista-daniya-804a75219_i-am-delighted-to-share-my-internship-certificate-activity-7090740720919089152-Hn04?utm_source=share&utm_medium=member_desktop" class="text-indigo-500 inline-flex items-center mt-4">Know More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                  <img id="moreImage" src="./image.png" alt="More Info Image" class="mt-4 hidden">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    </section>
+    <section class="text-gray-600 body-font custom-ed">
+      <div class="container px-4 md:px-2 py-4 mx-auto text-center">
+        <div class="flex flex-col text-center w-full mb-4">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-100">Education</h1>
+          <div class="flex flex-wrap justify-center -mx-4">
+            <div class="py-6 px-4 w-full md:w-1/2 lg:w-1/3">
+              <div class="h-full flex flex-col custom-ed1 p-6 rounded-lg bg-purple-100">
+                <h2 class="tracking-widest text-xs title-font font-medium text-indigo-500 mb-2">Bachelor of Engineering (ECE)</h2>
+                <h1 class="title-font text-xl font-medium text-gray-100 mb-4">Muffakham Jah College of Engineering and Technology</h1>
+                <p class="leading-relaxed mb-3">Osmania University - 8.01 CGPA<br>10/2020 - Present, Hyderabad, Telangana</p>
+              </div>
+            </div>
+    
+            <div class="py-6 px-4 w-full md:w-1/2 lg:w-1/3">
+              <div class="h-full flex flex-col custom-ed2 p-6 rounded-lg bg-purple-200 mt-4 md:mt-0">
+                <h2 class="tracking-widest text-xs title-font font-medium text-indigo-500 mb-2">Intermediate</h2>
+                <h1 class="title-font text-xl font-medium text-gray-100 mb-4">Sri Chaitanya Junior College</h1>
+                <p class="leading-relaxed mb-3">Board of Intermediate Education (T.S) - 84.8%<br>06/2018 - 04/2020, Hyderabad, Telangana</p>
+              </div>
+            </div>
+    
+            <div class="py-6 px-4 w-full md:w-1/2 lg:w-1/3">
+              <div class="h-full flex flex-col custom-ed3 p-6 rounded-lg bg-purple-300 mt-4 md:mt-0">
+                <h2 class="tracking-widest text-xs title-font font-medium text-indigo-500 mb-2">High School</h2>
+                <h1 class="title-font text-xl font-medium text-gray-100 mb-4">Little Flower High School</h1>
+                <p class="leading-relaxed mb-3">Board of Secondary Education (SSC) - 9.3 CGPA<br>04/2018, Hyderabad, Telangana</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="text-gray-100 body-font overflow-hidden custom-spe">
+      <div class="container px-2 py-4 mx-auto text-center">
+        <div class="flex flex-col text-center w-full mb-4">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-100">My specialty</h1>
+          <div class="lg:w-4/5 mx-auto flex flex-wrap justify-center">
+            <img class="lg:w-1/4 md:w-1/2 w-1/2 mb-0 p-7 object-cover object-center rounded animate-image" alt="hero" src="./Uni.png" id="specialtyImage">
+            <div class="lg:w-1/2 w-full lg:pl-8 lg:py-4 mt-8 lg:mt-0 text-center animate-text" id="specialtyText">
+              <h3 class="text-purple-50 text-xl title-font font-medium mb-1 mt-8">
+                I adeptly juggle multiple tasks by efficiently managing my time and priorities. Whether I'm traveling, painting, studying visual capture, or working on software and hardware projects, I leverage my organizational skills and passion for learning to maintain productivity in each pursuit.
+              </h3>
+              <!-- <div class="flex mb-2 justify-center"> -->
+                <!-- Content inside the flex div can go here -->
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+     
+    <section class="text-gray-100 body-font relative custom-con">
+      <form action="https://formspree.io/f/xovaqyjl" method="POST">
+          <div class="container mx-auto">
+              <div class="flex flex-col text-center w-full mb-4">
+                  <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-100">Contact</h1>
+                  <p class="lg:w-2/3 mx-auto leading-relaxed text-xl text-indigo-500">
+                      Feel free to reach out to discuss opportunities or collaborations. You can contact me
+                  </p>
+                  <div class="pt-8 w-full">
+                      <a href="https://www.linkedin.com/in/shaista-daniya-804a75219/" class="text-purple-100 bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-700 rounded text-lg">
+                          Check out my LinkedIn
+                      </a>
+                  </div>
+              </div>
+              <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                  <div class="flex flex-wrap">
+                      <div class="p-2 w-full sm:w-1/2 input-container">
+                          <label for="name" class="leading-7 text-xl text-purple-100">Name</label>
+                          <input type="text" id="name" name="name" class="inbx bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-black focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                      </div>
+                     
+                      <div class="p-2 w-full sm:w-1/2 input-container">
+                          <label for="email" class="leading-7 text-xl text-purple-100">Email</label>
+                          <input type="email" id="email" name="email" class="inbx bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-black focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                      </div>
+                      <div class="p-2 w-full">
+                          <div class="relative">
+                              <label for="message" class="leading-7 text-xl text-purple-100">Message</label>
+                              <textarea id="message" name="message" class="w-full inbx  bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-black focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                          </div>
+                      </div>
+                      <div class="p-2 w-full ">
+                          <button class="flex mx-auto text-purple-100 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-500 rounded text-lg bg-indigo-800">
+                              Send
+                          </button>
+                      </div>
+                  </form>
+                      <div class="p-2 w-full pt-8 mt-2 border-t border-gray-200 text-center">
+                          <a href="mailto:shaistadaniya321@gmail.com" class="text-xl text-indigo-500">shaistadaniya321@gmail.com</a>
+                          <p class="leading-normal my-2">Hyderabad<br>Telangana, India</p>
+                          <span class="inline-flex">
+                              <a class="text-gray-500">
+                                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                      <path d="M18 2h-3a3 3 0 0 0-3 3v1"></path>
+                                      <path d="M5 16v2a3 3 0 0 0 3 3h7"></path>
+                                      <path d="M16 2v6a3 3 0 0 0 3 3h2"></path>
+                                      <path d="M1 9v2a3 3 0 0 0 3 3h7"></path>
+                                      <path d="M1 19h2a3 3 0 0 0 3-3v-6"></path>
+                                  </svg>
+                              </a>
+                              <a class="ml-2 text-gray-500">
+                                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                      <path d="M8 2L8 6"></path>
+                                      <path d="M16 2L16 6"></path>
+                                      <path d="M12 2L12 6"></path>
+                                      <path d="M4 10L20 10"></path>
+                                      <path d="M4 14L20 14"></path>
+                                      <path d="M4 18L20 18"></path>
+                                  </svg>
+                              </a>
+                              <a class="ml-2 text-gray-500">
+                                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                      <path d="M8 2L8 6"></path>
+                                      <path d="M8 12L8 12"></path>
+                                      <path d="M8 18L8 18"></path>
+                                      <path d="M16 6L16 6"></path>
+                                      <path d="M16 12L16 12"></path>
+                                      <path d="M16 18L16 18"></path>
+                                  </svg>
+                              </a>
+                              <a class="ml-2 text-gray-500">
+                                  <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                                      <path stroke="none" d="M0 0h24v24H0z"></path>
+                                      <circle cx="12" cy="12" r="9"></circle>
+                                      <line x1="9" y1="12" x2="15" y2="12"></line>
+                                      <line x1="12" y1="9" x2="12" y2="15"></line>
+                                  </svg>
+                              </a>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+     
+      </section>
+    <script>
+      function redirectToButtonPage() {
+            window.location.href = './contact.html';
+        }
+        // JavaScript for hamburger menu toggle
+        function toggleMenu() {
+            const hamburger = document.querySelector('.custom-hamburger');
+            const nav = document.querySelector('.custom-nav');
+
+            hamburger.classList.toggle('open');
+            nav.classList.toggle('open');
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const educationObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        setTimeout(() => {
+          entry.target.classList.remove('animate');
+        }, 1500); // Duration of the animation in ms
+      }
+    });
+  }, observerOptions);
+
+  const educationSections = document.querySelectorAll('.custom-ed1, .custom-ed2, .custom-ed3');
+  educationSections.forEach(section => {
+    educationObserver.observe(section);
+  });
+
+  const experienceObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        setTimeout(() => {
+          entry.target.classList.remove('animate');
+        }, 1500); // Duration of the animation in ms
+      }
+    });
+  }, observerOptions);
+
+  const experienceSections = document.querySelectorAll('.custom-exp1, .custom-exp2, .custom-exp3');
+  experienceSections.forEach(section => {
+    experienceObserver.observe(section);
+  });
+});
+document.addEventListener("DOMContentLoaded", function() {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        setTimeout(() => {
+          entry.target.classList.remove('animate');
+        }, 1500); // Duration of the animation in ms
+      }
+    });
+  }, observerOptions);
+
+  const sections = document.querySelectorAll('.custom-ed1, .custom-ed2, .custom-ed3');
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+});
+document.addEventListener("DOMContentLoaded", function() {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const educationObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        setTimeout(() => {
+          entry.target.classList.remove('animate');
+        }, 1500); // Duration of the animation in ms
+      }
+    });
+  }, observerOptions);
+
+  const educationSections = document.querySelectorAll('.custom-ed1, .custom-ed2, .custom-ed3');
+  educationSections.forEach(section => {
+    educationObserver.observe(section);
+  });
+
+  const experienceObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        setTimeout(() => {
+          entry.target.classList.remove('animate');
+        }, 1500); // Duration of the animation in ms
+      }
+    });
+  }, observerOptions);
+
+  const experienceSections = document.querySelectorAll('.custom-exp1, .custom-exp2, .custom-exp3');
+  experienceSections.forEach(section => {
+    experienceObserver.observe(section);
+  });
+
+ 
+});
+
+    // Function to check if an element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    // Function to add animation class when element is in viewport
+    function animateOnScroll() {
+        const elementsToAnimate = document.querySelectorAll('.animate-image, .animate-text');
+        
+        elementsToAnimate.forEach(element => {
+            if (isInViewport(element)) {
+                element.classList.add('animate');
+            }
+        });
+    }
+
+    // Initial check on page load
+    animateOnScroll();
+
+    // Event listener for scroll events
+    window.addEventListener('scroll', animateOnScroll);
+</script>
+
+</body>
+</html>

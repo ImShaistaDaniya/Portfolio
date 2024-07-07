@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaista Daniya</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+        }
+
+        .custom-header {
+            background-color: #000000;
+            color: #F3F4F6;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .custom-logo-container {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            text-decoration: none;
+            color: #F3F4F6;
+        }
+
+        .custom-logo {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: none;
+            margin-right: 0.5rem;
+            border: 1px solid #9CA3AF;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .custom-nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .custom-nav-item {
+            margin-right: 1.5rem;
+        }
+
+        .custom-nav-link {
+            text-decoration: none;
+            color: #F3F4F6;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .custom-nav-link:hover {
+            color: #6B7280;
+        }
+
+        .custom-button {
+            background-color: #4B5563;
+            color: #F3F4F6;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 0.25rem;
+            margin: 0 0.5rem;
+        }
+
+        .custom-button:hover {
+            background-color: #111827;
+        }
+
+        .custom-hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .custom-hamburger div {
+            width: 100%;
+            height: 3px;
+            background-color: #F3F4F6;
+            transition: transform 0.3s ease;
+        }
+
+        .custom-hamburger.open div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .custom-hamburger.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .custom-hamburger.open div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .ac {
+            background-color: #000000;
+            color: #F3F4F6;
+            padding-top: 0rem; /* Add padding to compensate for fixed header */
+        }
+
+        .box-ac {
+            background-color: #1d1d1d;
+            color: #F3F4F6;
+            opacity: 1; /* Ensure opacity is set to 1 */
+            transform: scale(1); /* Ensure scale is set to 1 */
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            height: 100%; /* Ensure boxes have the same height */
+            width: 100%; /* Ensure boxes have the same width */
+            border-radius: 10px; /* Rounded corners for consistency */
+            padding: 20px; /* Adjust padding as needed */
+            margin-bottom: 20px; /* Add margin between boxes */
+        }
+
+        .box1-ac {
+            background-color: #8a8585;
+            color: #F3F4F6;
+            height: 100%; /* Ensure boxes have the same height */
+            width: 100%; /* Ensure boxes have the same width */
+            border-radius: 10px; /* Rounded corners for consistency */
+            padding: 20px; /* Adjust padding as needed */
+            margin-bottom: 20px; /* Add margin between boxes */
+        }
+
+        .custom-nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .typing-animation {
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: typing 3.5s steps(30, end) infinite;
+            animation-delay: 0s;
+            font-size: 1.5rem; /* Font size for typing animation */
+            margin-left: 0rem; /* Adjust spacing between logo and text */
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .custom-nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                background-color: #000000;
+                padding: 1rem 0;
+                text-align: center;
+                z-index: 10; /* Ensure navigation is above content */
+            }
+
+            .custom-nav.open {
+                display: flex;
+            }
+
+            .custom-nav-item {
+                margin-bottom: 1rem;
+            }
+
+            .custom-button {
+                margin: 0.3rem 0;
+                display: block;
+                position: relative;
+                left: -7px;
+            }
+
+            #projects-link {
+                margin-bottom: 0.5rem;
+            }
+
+            .custom-hamburger {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .custom-nav-item {
+                margin-right: 1.2rem;
+            }
+
+            .custom-nav {
+                justify-content: flex-end;
+            }
+
+            .custom-nav-item:last-child {
+                margin-right: 0;
+            }
+
+            .custom-hamburger {
+                display: none;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .custom-nav-item {
+                margin-right: 1.2rem; /* Adjusted margin for desktop/laptop view */
+            }
+
+            .custom-nav {
+                justify-content: flex-end; /* Align items to the right in desktop view */
+            }
+
+            .custom-nav-item:last-child {
+                margin-right: 0; /* Remove margin from last item */
+            }
+
+            .custom-hamburger {
+                display: none; /* Hide hamburger menu in desktop/laptop view */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="custom-header">
+        <a href="#" class="custom-logo-container">
+            <div class="custom-logo">SD</div>
+            <span class="typing-animation">Shaista Daniya</span>
+        </a>
+        <nav class="custom-nav">
+            <a href="./index.html" class="custom-nav-link custom-nav-item">Home</a>
+            <a href="./about.html" class="custom-nav-link custom-nav-item">About Me</a>
+            <a href="./projects.html" id="projects-link" class="custom-nav-link custom-nav-item">Projects</a>
+            <button class="custom-button" onclick="redirectToButtonPage()">Contact</button>
+        </nav>
+        <div class="custom-hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font ac">
+        <div class="container px-2 py-4 mx-auto flex flex-wrap">
+            <h1 class="text-3xl font-medium text-gray-100 mb-6 mx-auto">Extra Activities</h1>
+
+            <div class="flex flex-wrap -m-4">
+                <div class="p-4 lg:w-1/2 md:w-full">
+                    <div class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col box-ac">
+                        <div class="flex-grow bg-purple-00">
+                            <h2 class="text-gray-100 text-lg title-font font-medium mb-3">Chairperson IEEE CASS MJCET</h2>
+                            <p class="leading-relaxed text-base">As a dedicated chairperson, I adeptly built and led teams, overseeing all aspects from skill development to workshop coordination. I organized impactful events such as an IoT workshop and IEEE CASS activities at MJCET for IEEE DAY, while also spearheading initiatives like ElectroVision and Tech Pulse to foster innovation. In addition, I facilitated collaborative efforts and fostered a culture of innovation, ensuring that each endeavor contributed to our goals. Some of the notable events I organized include Intellectual Rumble, IoT Spark, IEEE Day, ElectroVision, Tech Pulse, Electro Quest, and a VLSI internship.
+   <br>
+                                <a href="https://events.vtools.ieee.org/events/search?_sub=true&q=&ou=SBC61931B+-+Muffakhamjah+College+of+Engineering+%26+Tech%2CCAS04&d=All&commit=Search" class="text-indigo-500 inline-flex items-center mt-4">Know More</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 lg:w-1/2 md:w-full">
+                    <div class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col box-ac">
+                        <div class="flex-grow bg-red-00">
+                          <h2 class="text-gray-100 text-lg title-font font-medium mb-3">TSIG MJCET BITA lead</h2>
+                          <p class="leading-relaxed text-base"> As the TSIG MJCET BITA Lead, I've actively participated and achieved significant recognition, including receiving Letters of Appreciation for my exemplary leadership as Vice Head of DSAI at T-SIG. I adeptly managed and guided the team, meticulously planned and executed workshops, and spearheaded events such as PYWEEK, PYSCRAPE, DIGITAL TWIN, and IOT|TSIG workshops with efficiency and excellence.</p>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="container px-24 py-32 mx-auto flex flex-wrap"></div>
+          </section>
+      
+          <script>
+              function toggleMenu() {
+                  const nav = document.querySelector('.custom-nav');
+                  const hamburger = document.querySelector('.custom-hamburger');
+                  nav.classList.toggle('open');
+                  hamburger.classList.toggle('open');
+              }
+      
+              function redirectToButtonPage() {
+                  window.location.href = './contact.html'; // Replace with actual contact page URL
+              }
+          </script>
+      </body>
+      </html>
+      
